@@ -9,7 +9,6 @@ import theme from '../../global/styles/theme';
 
 export const Container = styled.View`
     flex:1;
-  
     background-color: ${({ theme }) => theme.colors.background};
 `
 export const Title = styled.Text`
@@ -70,4 +69,18 @@ export const HighlightCards = styled.ScrollView.attrs({
     width: 100%;
     position: absolute;
     margin-top: ${RFPercentage(21)}px;
+    z-index: 9;
+`
+export const Transactions = styled.ScrollView`
+    flex: 1;
+    z-index: 1;
+    margin-left: ${RFPercentage(3)}px;
+`
+
+export const Text = styled.Text`
+        margin-top: ${RFPercentage(21)}px;
+        margin-bottom: 20px;
+        font-size: ${({ theme }) => theme.fontSize.large}px;
+        font-family: ${({ theme }) => theme.fonts.regular};
+        color: ${({ theme }) => theme.colors.text};
 `
