@@ -1,46 +1,38 @@
+import React from "react";
 import {
-    Container,
-    Header,
-    Title,
-    Footer,
-    Amount,
-    LastTransaction,
-} from "./styles";
+  Container,
+  Title,
+  Amount,
+  Footer,
+  Icon,
+  CategoryText,
+  DateText
+} from "../Transaction/styles";
 
-interface Props{
-    type: 'up' | 'down' | 'total';
-    title: string;
-    amount: string;
-    lastTransaction: string;
-};
-
-const icon = {
-    up: 'arrow-up-circle',
-    down: 'arrow-down-circle',
-    total: 'dollar-sign',
+interface Props {
+  title: string;
+  amount: string;
+  category: string;
+  date: string;
+  type: 'up' | 'down';
+  icon: string;
 }
 
-export function Transaction({ type, title, amount, lastTransaction } : Props){
-    return(
-        <Container type = { type }>
-            <Header>
-                <Title type = { type }>
-                    {title}
-                </Title>
-            </Header>
+export function Transaction({ title, amount, category, date, type, icon }: Props) {
+  return (
+    <Container>
+      <Title>{title}</Title>
 
-            <Footer >
+      <Amount type={type}>
+        {type === 'down' && '- '}
+        {amount}
+      </Amount>
 
-                <Amount type = { type }> 
-                    { amount } 
-                </Amount>
-
-                <LastTransaction type = { type }>
-                    { lastTransaction }
-                </LastTransaction>
-
-            </Footer>
-
-        </Container>
-    )
+      <Footer>
+        <Icon name={icon} />
+        <CategoryText>{category}</CategoryText>
+        <DateText>{date}</DateText>
+      </Footer>
+    </Container>
+  );
 }

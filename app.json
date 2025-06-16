@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MariloController",
-    "slug": "MariloController",
+    "name": "goFinance",
+    "slug": "goFinance",
     "version": "1.0.0",
     "plugins": [
       "expo-font"
