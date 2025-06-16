@@ -4,6 +4,7 @@ import {
     RFPercentage,
     RFValue,
 } from 'react-native-responsive-fontsize'
+
 import theme from '../../global/styles/theme';
 
 
@@ -61,6 +62,7 @@ export const Icon = styled(Feather)`
         color:${({ theme }) => theme.colors.secundary};
         font-size: ${RFValue(28)}px;
     `
+
 export const HighlightCards = styled.ScrollView.attrs({
     horizontal: true,
     showsHorizontalScrollIndicator: false,
@@ -71,16 +73,34 @@ export const HighlightCards = styled.ScrollView.attrs({
     margin-top: ${RFPercentage(21)}px;
     z-index: 9;
 `
-export const Transactions = styled.ScrollView`
-    flex: 1;
-    z-index: 1;
-    margin-left: ${RFPercentage(3)}px;
-`
 
-export const Text = styled.Text`
-        margin-top: ${RFPercentage(21)}px;
-        margin-bottom: 20px;
-        font-size: ${({ theme }) => theme.fontSize.large}px;
-        font-family: ${({ theme }) => theme.fonts.regular};
-        color: ${({ theme }) => theme.colors.text};
-`
+export const ListContainer = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.shape};
+  margin: ${RFValue(120)}px ${RFValue(40)}px 0;   /* top, horizontal */
+  border-radius: ${({ theme }) => theme.borderRadius.medium}px;
+  padding: ${RFValue(12)}px;
+  margin-bottom: ${RFValue(60)}px
+`;
+
+// novo: título “Listagem” estilizado
+export const ListTitle = styled.Text`
+  font-size: ${({ theme }) => theme.fontSize.large}px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: ${RFValue(8)}px;
+`;
+
+export const Transactions = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    paddingHorizontal: RFValue(16),
+    paddingBottom: RFValue(16),
+    alignItems: 'center',
+  },
+  showsVerticalScrollIndicator: false,
+})`
+  flex: 1;
+   
+  
+`;
+

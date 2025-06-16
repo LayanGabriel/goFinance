@@ -1,43 +1,64 @@
+import { RFValue } from "react-native-responsive-fontsize";
 import styled, { css } from "styled-components/native";
 import { Feather } from '@expo/vector-icons';
-import { RFValue } from "react-native-responsive-fontsize";
-import theme from "../../global/styles/theme";
 
-interface TypeProps {
-    type: 'up' | 'down' | 'total'
-};
+interface AmountProps {
+  type: 'up' | 'down';
+}
 
-export const Container = styled.View< TypeProps > `
-        background-color: ${({ theme, type }) => type === 'total' ? theme.colors.secondary : theme.colors.shape};
-        width: ${RFValue(300)}px;
-        border-radius: ${({ theme }) => theme.borderRadius.large}px;
-        padding: 20px 23px;
-        padding-bottom: ${RFValue(42)}px;
-        margin-bottom: ${({ theme }) => theme.spacing.small};
-    `
+export const Container = styled.View`
+  background-color: ${({ theme }) => theme.colors.shape};
+  width: ${RFValue(260)}px;
+  border-radius: ${({ theme }) => theme.borderRadius.large}px;
+  padding: ${RFValue(8)}px ${RFValue(12)}px;
+  margin-bottom: ${RFValue(8)}px;
+  border-width: ${RFValue(1)}px;
+  border-color: ${({ theme }) => theme.colors.text_light};
+`;
 
-export const Header = styled.View`
-        flex-direction: column;
-        justify-content: space-between;
-        align-itens: center;
-
-    `
 export const Title = styled.Text`
-        font-size: ${({ theme }) => theme.fontSize.small}px;
-        font-family: ${({ theme }) => theme.fonts.regular};
-        color: ${({ theme, type }) =>  type === 'total' ? theme.colors.shape : theme.colors.text};
-    `
+  font-size: ${({ theme }) => theme.fontSize.small}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.text};
+`;
 
-export const Footer = styled.View``
+export const Amount = styled.Text<AmountProps>`
+  font-size: ${({ theme }) => theme.fontSize.large}px;
+  font-family: ${({ theme }) => theme.fonts.medium};
+  margin-top: 2px;
 
-export const Amount = styled.Text < TypeProps >`
-        font-size: ${({ theme }) => theme.fontSize.xxlarge}px;
-        font-family: ${({ theme }) => theme.fonts.medium};
-        margin-top: ${({ theme }) => theme.spacing.xlarge};
-        color: ${({ theme, type }) => type === 'total' ? theme.colors.shape : theme.colors.text};
-    `
-export const LastTransaction = styled.Text`
-        font-size: ${({ theme }) => theme.fontSize.small}px;
-        font-family: ${({ theme }) => theme.fonts.regular};       
-        color: ${({ theme, type }) => type === 'total' ? theme.colors.shape : theme.colors.text_light};
-    `
+  ${({ type, theme }) => type === 'up' && css`
+    color: ${theme.colors.success};
+  `}
+
+  ${({ type, theme }) => type === 'down' && css`
+    color: ${theme.colors.error};
+  `}
+`;
+
+export const Footer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.cor};
+  padding: ${RFValue(4)}px ${RFValue(8)}px;
+  margin-top: ${RFValue(8)}px;
+  border-radius: ${({ theme }) => theme.borderRadius.small}px;
+`;
+
+export const Icon = styled(Feather)`
+  font-size: ${({ theme }) => theme.fontSize.medium}px;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const CategoryText = styled.Text`
+  font-size: ${({ theme }) => theme.fontSize.small}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const DateText = styled.Text`
+  font-size: ${({ theme }) => theme.fontSize.small}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.text_light};
+`;
