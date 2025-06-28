@@ -39,7 +39,7 @@ export function Dashboard() {
             amount: "R$ 150,00",
             category: "Educação",
             date: "29/06/2025",
-            type: "up",
+            type: "down",
         },
         {
             title: "Academia",

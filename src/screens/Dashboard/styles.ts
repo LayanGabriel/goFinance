@@ -77,10 +77,10 @@ export const HighlightCards = styled.ScrollView.attrs({
 export const ListContainer = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.shape};
-  margin: ${RFValue(120)}px ${RFValue(40)}px 0;   /* top, horizontal */
+  margin: ${RFValue(120)}px ${RFValue(10)}px 0;   /* top, horizontal */
   border-radius: ${({ theme }) => theme.borderRadius.medium}px;
   padding: ${RFValue(12)}px;
-  margin-bottom: ${RFValue(60)}px
+  margin-bottom: ${RFValue(5)}px
 `;
 
 // novo: título “Listagem” estilizado
