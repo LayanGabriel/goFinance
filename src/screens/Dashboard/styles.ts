@@ -87,17 +87,10 @@ export const HighlightCards = styled.ScrollView.attrs({
 export const ListContainer = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.shape};
-<<<<<<< HEAD
   margin: ${RFValue(120)}px ${RFValue(15)}px 0;   /* top, horizontal */
   border-radius: ${({ theme }) => theme.borderRadius.medium}px;
   padding: ${RFValue(12)}px;
   margin-bottom: ${RFValue(10)}px
-=======
-  margin: ${RFValue(120)}px ${RFValue(40)}px 0;   /* top, horizontal */
-  border-radius: ${({ theme }) => theme.borderRadius.medium}px;
-  padding: ${RFValue(12)}px;
-  margin-bottom: ${RFValue(60)}px
->>>>>>> de2389da16985d982dcda18469ae88c41674069e
 `;
 
 // novo: título “Listagem” estilizado
@@ -121,12 +114,9 @@ export const Transactions = styled.ScrollView.attrs({
   
 `;
 
-<<<<<<< HEAD
 export const TransactionList = styled.FlatList.attrs({
     showsVerticalScrollIndicator: false,
 })
 ` 
 
 `
-=======
->>>>>>> de2389da16985d982dcda18469ae88c41674069e

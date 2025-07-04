@@ -2,7 +2,6 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { Dashboard } from "../screens/Dashboard";
 import { Register } from "../screens/Register";
-<<<<<<< HEAD
 import { Resume } from "../screens/Resume";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components/native"
@@ -57,24 +56,6 @@ export function AppRoutes(){
                         />
                     ))
                 }}  
-=======
-
-const { Navigator, Screen } = createBottomTabNavigator();
-
-export function AppRoutes(){
-    return(
-        <Navigator id={undefined}
-            screenOptions={{headerShown:false}}
-        >
-            <Screen 
-                name = "listagem"
-                component = {Dashboard}
-            />
-
-            <Screen
-                name = "Cadastrar"
-                component = {Register}
->>>>>>> de2389da16985d982dcda18469ae88c41674069e
             />
         </Navigator>
     )

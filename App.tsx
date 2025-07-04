@@ -1,11 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components';
-=======
-
-import {ThemeProvider} from 'styled-components';
->>>>>>> de2389da16985d982dcda18469ae88c41674069e
 import theme from './src/global/styles/theme';
 import { AppRoutes } from './src/Routes/app.routes';
 
@@ -21,7 +16,6 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -36,7 +30,6 @@ export default function App() {
   }
 
   return (
-<<<<<<< HEAD
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
@@ -44,14 +37,5 @@ export default function App() {
         </NavigationContainer>
       </ThemeProvider>
     </GestureHandlerRootView>
-=======
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-       <AppRoutes/>
-       
-       </NavigationContainer>
-    </ThemeProvider>
-   
->>>>>>> de2389da16985d982dcda18469ae88c41674069e
   );
 }
