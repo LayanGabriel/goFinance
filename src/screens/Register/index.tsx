@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
 import { Container, Header, Title, Form, Fields, TransactionsTypes } from './styles';
@@ -94,3 +95,33 @@ export function Register() {
     </Container>
   );
 }
+=======
+import React from "react";
+import {  Container,
+    Form,
+    Title,
+    Header 
+} 
+from "./styles";
+
+import { Input } from "../../components/Forms/Input";
+
+
+export function Register(){
+    return(
+        < Container>
+            <Header>
+                <Title>Cadastro</Title>
+            </Header>
+            <Form>
+                <Input
+                    placeholder = "Nome"
+                />
+                <Input
+                    placeholder = "Valor"
+                />
+            </Form>
+        </Container>     
+    )
+}
+>>>>>>> de2389da16985d982dcda18469ae88c41674069e
